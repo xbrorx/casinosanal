@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #f7971e;
+    --secondary: #ffd200;
+    --dark: #0a0e1a;
+    --darker: #060912;
+    --card: #141b2b;
+    --card-hover: #1a2335;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+    --success: #4caf50;
+    --danger: #f44336;
+    --warning: #ff9800;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--dark);
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Animasyonlar */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes jackpot {
+    0% { transform: scale(1); color: var(--gold); }
+    50% { transform: scale(1.5); color: #ff0088; }
+    100% { transform: scale(1); color: var(--gold); }
+}
+
+/* Auth Container */
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.auth-box {
+    background: linear-gradient(145deg, var(--card), var(--card-hover));
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,215,0,0.1);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.casino-logo {
+    font-size: 60px;
+    display: block;
+    animation: pulse 2s infinite;
+}
+
+.auth-header h1 {
+    font-size: 28px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 10px 0;
+}
+
+.auth-header p {
+    color: #889;
+    font-size: 14px;
+}
+
+/* Casino Main */
+.casino-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid rgba(255,215,0,0.1);
+    margin-bottom: 16px;
+}
+
+.balance {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+.balance span {
+    color: #fff;
+}
+
+/* Oyun Kartları */
+.game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.game-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px 12px;
+    text-align: center;
+    border: 1px solid rgba(255,215,0,0.05);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.game-card:active {
+    transform: scale(0.95);
+    border-color: var(--primary);
+}
+
+.game-card .icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.game-card .name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #ccd;
+}
+
+/* Sonuç Kutuları */
+.result-box {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 120px;
+    border: 1px solid rgba(255,215,0,0.05);
+    margin: 16px 0;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.slot-reels {
+    font-size: 3rem;
+    letter-spacing: 8px;
+    margin: 10px 0;
+}
+
+.dice-display {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.win-text {
+    color: var(--success);
+    font-weight: bold;
+    animation: jackpot 1s ease-in-out;
+}
+
+.lose-text {
+    color: var(--danger);
+}
+
+/* VIP Badge */
+.vip-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.vip-1 { background: var(--bronze); color: #fff; }
+.vip-2 { background: var(--silver); color: #333; }
+.vip-3 { background: var(--gold); color: #333; }
+.vip-4 { background: linear-gradient(135deg, #ff0088, #ff4400); color: #fff; }
+.vip-5 { background: linear-gradient(135deg, #00ff88, #0088ff); color: #fff; }
+.vip-6 { background: linear-gradient(135deg, #ff00ff, #ff0088); color: #fff; }
+
+/* Mobil Duyarlılık */
+@media (max-width: 480px) {
+    .game-grid {
+        gap: 8px;
+    }
+    .game-card .icon {
+        font-size: 2.2rem;
+    }
+    .slot-reels {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    .dice-display {
+        font-size: 1.8rem;
+        gap: 12px;
+    }
+}
