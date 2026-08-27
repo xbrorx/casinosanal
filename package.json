@@ -1,0 +1,28 @@
+{
+  "name": "pragmatic-sanal-casino",
+  "version": "3.0.0",
+  "description": "Profesyonel sanal casino - Pragmatic Play tarzı",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": ["casino", "game", "slots", "blackjack", "dice", "wheel"],
+  "author": "Casino Pro",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.3",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
